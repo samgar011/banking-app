@@ -1,0 +1,15 @@
+services:
+  banking-db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: banking_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-banking:/var/lib/postgresql/data
+
+volumes:
+  postgres-banking:
